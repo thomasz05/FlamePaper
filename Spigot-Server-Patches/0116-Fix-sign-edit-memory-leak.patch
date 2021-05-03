@@ -26,7 +26,7 @@ index ec550aaa4e7943af4ecdd2275f1f32c21edf770a..6d0fe58d7e574ce5189e1f7a8485060d
      private EntityHuman c;
      private final FormattedString[] g;
      private EnumColor color;
-+    public java.util.UUID signEditor; // Paper
++    public java.util.UUID signEditor; // FlamePaper
  
      public TileEntitySign() {
          super(TileEntityTypes.SIGN);
@@ -35,10 +35,10 @@ index ec550aaa4e7943af4ecdd2275f1f32c21edf770a..6d0fe58d7e574ce5189e1f7a8485060d
  
      public void a(EntityHuman entityhuman) {
 -        this.c = entityhuman;
-+        // Paper start
++        // FlamePaper start
 +        //this.c = entityhuman;
 +        signEditor = entityhuman != null ? entityhuman.getUniqueID() : null;
-+        // Paper end
++        // FlamePaper end
      }
  
      public EntityHuman f() {
