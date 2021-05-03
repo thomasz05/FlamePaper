@@ -12,7 +12,7 @@ index 301313b..865c1a2 100644
  // CraftBukkit start
  import org.bukkit.craftbukkit.entity.CraftHumanEntity;
  import org.bukkit.craftbukkit.entity.CraftItem;
-+import org.bukkit.craftbukkit.entity.CraftPlayer; // Paper
++import org.bukkit.craftbukkit.entity.CraftPlayer; // FlamePaper
  import org.bukkit.craftbukkit.event.CraftEventFactory;
  import org.bukkit.entity.Player;
  import org.bukkit.event.entity.EntityCombustByEntityEvent;
