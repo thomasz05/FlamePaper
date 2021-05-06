@@ -18,7 +18,7 @@ index f426c2e..e2eb305 100644
 +        return readByteArray(Short.MAX_VALUE);
 +    }
 +
-+    public byte[]readByteArray(int limit) {
++    public byte[] readByteArray(int limit) {
 +        int len = this.e();
 +        if (len > limit) throw new DecoderException("The received a byte array longer than allowed " + len + " > " + limit);
 +        byte[] abyte = new byte[len];
@@ -45,4 +45,3 @@ index 1d2e855..da9d4d8 100644
      public void b(PacketDataSerializer packetdataserializer) throws IOException {
 -- 
 2.7.4
-
