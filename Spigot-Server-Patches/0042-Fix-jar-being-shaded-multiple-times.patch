@@ -1,14 +1,14 @@
-From d50dae836a3d3f52e9c5be6089246adadbb71628 Mon Sep 17 00:00:00 2001
+From 598327a5d9ced74439a49db99464399ec8fb51d2 Mon Sep 17 00:00:00 2001
 From: Jedediah Smith <jedediah@silencegreys.com>
 Date: Thu, 30 Apr 2015 22:42:34 -0400
 Subject: [PATCH] Fix jar being shaded multiple times
 
 
 diff --git a/pom.xml b/pom.xml
-index 19e47f4..68073c0 100644
+index f588ec760..b2c30ae5a 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -130,6 +130,7 @@
+@@ -108,6 +108,7 @@
                  <artifactId>maven-jar-plugin</artifactId>
                  <version>2.5</version>
                  <configuration>
@@ -17,5 +17,5 @@ index 19e47f4..68073c0 100644
                          <manifestEntries>
                              <Main-Class>org.bukkit.craftbukkit.Main</Main-Class>
 -- 
-2.7.1
+2.32.0.windows.1
 
