@@ -1,11 +1,11 @@
-From 127a77bcf1da5e6d2ba7cae4e500ae0c3f98c5ec Mon Sep 17 00:00:00 2001
+From 488b91200c6c79ac7e81ca25d274295eec9f2ff9 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Thu, 19 Mar 2015 19:41:15 -0500
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 91627ff0c..f588ec760 100644
+index 91627ff0c..1ff05020f 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -1,12 +1,12 @@
@@ -55,6 +55,15 @@ index 91627ff0c..f588ec760 100644
              <version>${project.version}</version>
              <type>jar</type>
              <scope>compile</scope>
+@@ -71,7 +72,7 @@
+         <dependency>
+             <groupId>mysql</groupId>
+             <artifactId>mysql-connector-java</artifactId>
+-            <version>5.1.14</version>
++            <version>8.0.25</version>
+             <type>jar</type>
+             <scope>compile</scope>
+         </dependency>
 @@ -102,37 +103,6 @@
      <build>
          <defaultGoal>install</defaultGoal>
