@@ -1,4 +1,4 @@
-From 168d2741906ba96ec6043e76e1d7911ba1eca070 Mon Sep 17 00:00:00 2001
+From bb9ea47b23977a2e900ea481539b07a01023087a Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Mon, 25 May 2015 15:37:00 -0500
 Subject: [PATCH] mc-dev imports
@@ -3166,10 +3166,10 @@ index 000000000..55f04b474
 +}
 diff --git a/src/main/java/net/minecraft/server/IChatBaseComponent.java b/src/main/java/net/minecraft/server/IChatBaseComponent.java
 new file mode 100644
-index 000000000..b187a8518
+index 000000000..01c39b237
 --- /dev/null
 +++ b/src/main/java/net/minecraft/server/IChatBaseComponent.java
-@@ -0,0 +1,240 @@
+@@ -0,0 +1,242 @@
 +package net.minecraft.server;
 +
 +import com.google.gson.Gson;
@@ -3392,11 +3392,13 @@ index 000000000..b187a8518
 +            return (IChatBaseComponent) IChatBaseComponent.ChatSerializer.a.fromJson(s, IChatBaseComponent.class);
 +        }
 +
-+        public JsonElement serialize(Object object, Type type, JsonSerializationContext jsonserializationcontext) {
++        @Override
++        public JsonElement serialize(IChatBaseComponent object, Type type, JsonSerializationContext jsonserializationcontext) {
 +            return this.a((IChatBaseComponent) object, type, jsonserializationcontext);
 +        }
 +
-+        public Object deserialize(JsonElement jsonelement, Type type, JsonDeserializationContext jsondeserializationcontext) throws JsonParseException {
++        @Override
++        public IChatBaseComponent deserialize(JsonElement jsonelement, Type type, JsonDeserializationContext jsondeserializationcontext) throws JsonParseException {
 +            return this.a(jsonelement, type, jsondeserializationcontext);
 +        }
 +
@@ -3410,6 +3412,7 @@ index 000000000..b187a8518
 +        }
 +    }
 +}
+\ No newline at end of file
 diff --git a/src/main/java/net/minecraft/server/ItemBlock.java b/src/main/java/net/minecraft/server/ItemBlock.java
 new file mode 100644
 index 000000000..57b3d9d0f
