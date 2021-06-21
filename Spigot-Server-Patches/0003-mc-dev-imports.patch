@@ -1,4 +1,4 @@
-From 607a5373a4715ef232af762b70e8ac6045fe7d55 Mon Sep 17 00:00:00 2001
+From 168d2741906ba96ec6043e76e1d7911ba1eca070 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Mon, 25 May 2015 15:37:00 -0500
 Subject: [PATCH] mc-dev imports
@@ -3166,7 +3166,7 @@ index 000000000..55f04b474
 +}
 diff --git a/src/main/java/net/minecraft/server/IChatBaseComponent.java b/src/main/java/net/minecraft/server/IChatBaseComponent.java
 new file mode 100644
-index 000000000..d2708384b
+index 000000000..b187a8518
 --- /dev/null
 +++ b/src/main/java/net/minecraft/server/IChatBaseComponent.java
 @@ -0,0 +1,240 @@
@@ -3410,7 +3410,6 @@ index 000000000..d2708384b
 +        }
 +    }
 +}
-\ No newline at end of file
 diff --git a/src/main/java/net/minecraft/server/ItemBlock.java b/src/main/java/net/minecraft/server/ItemBlock.java
 new file mode 100644
 index 000000000..57b3d9d0f
