@@ -20,8 +20,8 @@ index 91627ff0c..1ff05020f 100644
      <version>1.8.8-R0.1-SNAPSHOT</version>
 -    <name>Spigot</name>
 -    <url>http://www.spigotmc.org</url>
-+    <name>PaperSpigot</name>
-+    <url>https://hub.spigotmc.org/stash/projects/PAPER/</url>
++    <name>FlamePaper</name>
++    <url>https://github.com/2lstudios-mc/FlamePaper/</url>
  
      <properties>
          <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
