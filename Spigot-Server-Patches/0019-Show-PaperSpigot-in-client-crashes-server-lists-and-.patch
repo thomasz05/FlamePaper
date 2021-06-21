@@ -14,7 +14,7 @@ index 1d29ae7..9fc2cfa 100644
  
      public String getServerModName() {
 -        return "Spigot"; // Spigot - Spigot > // CraftBukkit - cb > vanilla!
-+        return "PaperSpigot"; // PaperSpigot - PaperSpigot > // Spigot - Spigot > // CraftBukkit - cb > vanilla!
++        return "FlamePaper"; // PaperSpigot - PaperSpigot > // Spigot - Spigot > // CraftBukkit - cb > vanilla!
      }
  
      public CrashReport b(CrashReport crashreport) {
