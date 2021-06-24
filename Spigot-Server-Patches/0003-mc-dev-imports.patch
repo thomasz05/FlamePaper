@@ -1,4 +1,4 @@
-From bb9ea47b23977a2e900ea481539b07a01023087a Mon Sep 17 00:00:00 2001
+From 1e8781f9fcaa58924191e3ee2ec6fab3c61fba56 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Mon, 25 May 2015 15:37:00 -0500
 Subject: [PATCH] mc-dev imports
@@ -1622,7 +1622,7 @@ index 000000000..b61045021
 +}
 diff --git a/src/main/java/net/minecraft/server/BlockPosition.java b/src/main/java/net/minecraft/server/BlockPosition.java
 new file mode 100644
-index 000000000..2bd549913
+index 000000000..be7de7e5c
 --- /dev/null
 +++ b/src/main/java/net/minecraft/server/BlockPosition.java
 @@ -0,0 +1,260 @@
@@ -1751,7 +1751,7 @@ index 000000000..2bd549913
 +        return new BlockPosition(j, k, l);
 +    }
 +
-+    public static Iterable<BlockPosition> a(BlockPosition blockposition, BlockPosition blockposition1) {
++    public static Iterable<BlockPosition> a(final BlockPosition blockposition, final BlockPosition blockposition1) {
 +        final BlockPosition blockposition2 = new BlockPosition(Math.min(blockposition.getX(), blockposition1.getX()), Math.min(blockposition.getY(), blockposition1.getY()), Math.min(blockposition.getZ(), blockposition1.getZ()));
 +        final BlockPosition blockposition3 = new BlockPosition(Math.max(blockposition.getX(), blockposition1.getX()), Math.max(blockposition.getY(), blockposition1.getY()), Math.max(blockposition.getZ(), blockposition1.getZ()));
 +
@@ -1795,7 +1795,7 @@ index 000000000..2bd549913
 +        };
 +    }
 +
-+    public static Iterable<BlockPosition.MutableBlockPosition> b(BlockPosition blockposition, BlockPosition blockposition1) {
++    public static Iterable<BlockPosition.MutableBlockPosition> b(final BlockPosition blockposition, final BlockPosition blockposition1) {
 +        final BlockPosition blockposition2 = new BlockPosition(Math.min(blockposition.getX(), blockposition1.getX()), Math.min(blockposition.getY(), blockposition1.getY()), Math.min(blockposition.getZ(), blockposition1.getZ()));
 +        final BlockPosition blockposition3 = new BlockPosition(Math.max(blockposition.getX(), blockposition1.getX()), Math.max(blockposition.getY(), blockposition1.getY()), Math.max(blockposition.getZ(), blockposition1.getZ()));
 +

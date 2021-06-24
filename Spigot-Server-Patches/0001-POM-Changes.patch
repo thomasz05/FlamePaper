@@ -1,11 +1,11 @@
-From 488b91200c6c79ac7e81ca25d274295eec9f2ff9 Mon Sep 17 00:00:00 2001
+From a5d0224061b8c3dcaa698643ddd3948c85395057 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Thu, 19 Mar 2015 19:41:15 -0500
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 91627ff0c..1ff05020f 100644
+index 91627ff0c..13b6ade34 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -1,12 +1,12 @@
@@ -25,15 +25,12 @@ index 91627ff0c..1ff05020f 100644
  
      <properties>
          <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-@@ -16,13 +16,14 @@
+@@ -16,13 +16,11 @@
          <minecraft_version>1_8_R3</minecraft_version>
          <buildtag.prefix>git-Bukkit-</buildtag.prefix>
          <buildtag.suffix></buildtag.suffix>
 -        <maven.compiler.source>1.6</maven.compiler.source>
 -        <maven.compiler.target>1.6</maven.compiler.target>
-+        <!--PaperSpigot - Bump to 1.8 - This will haunt me -->
-+        <maven.compiler.source>1.8</maven.compiler.source>
-+        <maven.compiler.target>1.8</maven.compiler.target>
      </properties>
  
      <parent>
@@ -44,7 +41,7 @@ index 91627ff0c..1ff05020f 100644
          <version>dev-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-@@ -34,8 +35,8 @@
+@@ -34,8 +32,8 @@
              <version>3.0.3</version>
          </dependency>
          <dependency>
@@ -55,7 +52,7 @@ index 91627ff0c..1ff05020f 100644
              <version>${project.version}</version>
              <type>jar</type>
              <scope>compile</scope>
-@@ -102,37 +103,6 @@
+@@ -102,37 +100,6 @@
      <build>
          <defaultGoal>install</defaultGoal>
          <plugins>
@@ -93,7 +90,7 @@ index 91627ff0c..1ff05020f 100644
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-jar-plugin</artifactId>
-@@ -142,7 +112,7 @@
+@@ -142,7 +109,7 @@
                          <manifestEntries>
                              <Main-Class>org.bukkit.craftbukkit.Main</Main-Class>
                              <Implementation-Title>CraftBukkit</Implementation-Title>
@@ -102,7 +99,7 @@ index 91627ff0c..1ff05020f 100644
                              <Implementation-Vendor>Bukkit Team</Implementation-Vendor>
                              <Specification-Title>Bukkit</Specification-Title>
                              <Specification-Version>${api.version}</Specification-Version>
-@@ -171,26 +141,6 @@
+@@ -171,26 +138,6 @@
                      </archive>
                  </configuration>
              </plugin>
@@ -129,6 +126,21 @@ index 91627ff0c..1ff05020f 100644
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-shade-plugin</artifactId>
+@@ -257,12 +204,13 @@
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-compiler-plugin</artifactId>
+                 <!-- versions after this appear to be broken -->
+-                <version>3.1</version>
++                <version>3.8.1</version>
+                 <configuration>
+                     <!-- we use the Eclipse compiler as it doesn't need a JDK -->
+                     <compilerId>eclipse</compilerId>
+                     <!-- source and target are ignored if this isn't true -->
+                     <optimize>true</optimize>
++                    <release>11</release>
+                 </configuration>
+                 <dependencies>
+                     <!-- we need our custom version as it fixes some bugs on case sensitive file systems -->
 diff --git a/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java b/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
 index c110e0c2b..5540dde51 100644
 --- a/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
