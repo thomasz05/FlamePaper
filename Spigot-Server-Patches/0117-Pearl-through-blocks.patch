@@ -1,42 +1,48 @@
-From 0a2405c1c7d9ab293a74634b34910f79adef722a Mon Sep 17 00:00:00 2001
+From a00a5442d6f0e6a753c37a04997f7a90b6edfefb Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Sat, 26 Jun 2021 11:31:33 -0300
 Subject: [PATCH] Pearl through blocks
 
 
 diff --git a/src/main/java/net/minecraft/server/EntityEnderPearl.java b/src/main/java/net/minecraft/server/EntityEnderPearl.java
-index 319c0bc6f..4c8e7a344 100644
+index 319c0bc6..2c94ae15 100644
 --- a/src/main/java/net/minecraft/server/EntityEnderPearl.java
 +++ b/src/main/java/net/minecraft/server/EntityEnderPearl.java
-@@ -6,6 +6,8 @@ import org.bukkit.craftbukkit.event.CraftEventFactory;
+@@ -6,6 +6,10 @@ import org.bukkit.craftbukkit.event.CraftEventFactory;
  import org.bukkit.event.player.PlayerTeleportEvent;
  // CraftBukkit end
  
 +import org.github.paperspigot.PaperSpigotConfig;
 +
++import net.minecraft.server.BlockPosition;
++
  public class EntityEnderPearl extends EntityProjectile {
  
      private EntityLiving c;
-@@ -38,6 +40,17 @@ public class EntityEnderPearl extends EntityProjectile {
+@@ -38,6 +42,21 @@ public class EntityEnderPearl extends EntityProjectile {
          }
          // PaperSpigot end
  
-+        IBlockData blockData = world.getType(movingobjectposition.a());
-+        Block block = blockData.getBlock();
-+        boolean collides = 
-+            PaperSpigotConfig.pearlPassthroughTripwire && block == Blocks.TRIPWIRE
-+            || PaperSpigotConfig.pearlPassthroughFenceGate && block == Blocks.FENCE_GATE && ((Boolean) blockData.get(BlockFenceGate.OPEN)).booleanValue()
-+            || PaperSpigotConfig.pearlPassthroughSlab && (block == Blocks.STONE_SLAB || block == Blocks.WOODEN_SLAB || block == Blocks.STONE_SLAB2);
++        BlockPosition blockPosition = movingobjectposition.a();
 +
-+        if (collides) {
-+            return;
++        if (blockPosition != null) {
++            IBlockData blockData = world.getType(blockPosition);
++            Block block = blockData.getBlock();
++            boolean collides = 
++                PaperSpigotConfig.pearlPassthroughTripwire && block == Blocks.TRIPWIRE
++                || PaperSpigotConfig.pearlPassthroughFenceGate && block == Blocks.FENCE_GATE && ((Boolean) blockData.get(BlockFenceGate.OPEN)).booleanValue()
++                || PaperSpigotConfig.pearlPassthroughSlab && (block == Blocks.STONE_SLAB || block == Blocks.WOODEN_SLAB || block == Blocks.STONE_SLAB2);
++
++            if (collides) {
++                return;
++            }
 +        }
 +
          for (int i = 0; i < 32; ++i) {
              this.world.addParticle(EnumParticle.PORTAL, this.locX, this.locY + this.random.nextDouble() * 2.0D, this.locZ, this.random.nextGaussian(), 0.0D, this.random.nextGaussian(), new int[0]);
          }
 diff --git a/src/main/java/org/github/paperspigot/PaperSpigotConfig.java b/src/main/java/org/github/paperspigot/PaperSpigotConfig.java
-index d6d9899e2..8571cfb34 100644
+index d6d9899e..8571cfb3 100644
 --- a/src/main/java/org/github/paperspigot/PaperSpigotConfig.java
 +++ b/src/main/java/org/github/paperspigot/PaperSpigotConfig.java
 @@ -222,4 +222,22 @@ public class PaperSpigotConfig
