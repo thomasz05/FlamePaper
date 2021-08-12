@@ -1,11 +1,11 @@
-From 2ddab70e67d654134795d4a72276c2f9a339097d Mon Sep 17 00:00:00 2001
+From 2394d8453aba92810dbd55dd43cadfa8ea7c17f0 Mon Sep 17 00:00:00 2001
 From: Juan Cruz Linsalata <LinsaFTW@users.noreply.github.com>
 Date: Sun, 18 Oct 2020 15:36:00 -0300
 Subject: [PATCH] Fix chunk memory leak
 
 
 diff --git a/src/main/java/net/minecraft/server/ChunkProviderServer.java b/src/main/java/net/minecraft/server/ChunkProviderServer.java
-index c4dab42b..29182c23 100644
+index c4dab42b..c811b76c 100644
 --- a/src/main/java/net/minecraft/server/ChunkProviderServer.java
 +++ b/src/main/java/net/minecraft/server/ChunkProviderServer.java
 @@ -32,7 +32,8 @@ public class ChunkProviderServer implements IChunkProvider {
@@ -52,7 +52,7 @@ index c4dab42b..29182c23 100644
      }
  
 +    public boolean unloadChunks() {
-+        unloadChunks(false);
++        return unloadChunks(false);
 +    }
 +
      public boolean canSave() {
