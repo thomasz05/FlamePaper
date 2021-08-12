@@ -1,7 +1,7 @@
 From 2ddab70e67d654134795d4a72276c2f9a339097d Mon Sep 17 00:00:00 2001
 From: Juan Cruz Linsalata <LinsaFTW@users.noreply.github.com>
 Date: Sun, 18 Oct 2020 15:36:00 -0300
-Subject: [PATCH] Fixed chunk memory leak
+Subject: [PATCH] Fix chunk memory leak
 
 
 diff --git a/src/main/java/net/minecraft/server/ChunkProviderServer.java b/src/main/java/net/minecraft/server/ChunkProviderServer.java
