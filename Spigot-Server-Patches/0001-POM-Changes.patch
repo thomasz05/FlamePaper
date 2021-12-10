@@ -1,14 +1,14 @@
-From d893dcad1cfc43697f9eafb1d54fd871ff1fc853 Mon Sep 17 00:00:00 2001
+From b70ed4aac3f74d76bc939087360af2226e9c8848 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Thu, 19 Mar 2015 19:41:15 -0500
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 91627ff0c..2537663aa 100644
+index 91627ff0c..443d2040c 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -1,31 +1,36 @@
+@@ -1,41 +1,70 @@
  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
      <modelVersion>4.0.0</modelVersion>
@@ -53,8 +53,33 @@ index 91627ff0c..2537663aa 100644
 +    </repositories>
  
      <dependencies>
++        <dependency>
++            <groupId>org.apache.logging.log4j</groupId>
++            <artifactId>log4j-core</artifactId>
++            <version>2.15.1-SNAPSHOT</version>
++            <scope>compile</scope>
++        </dependency>
++        <dependency>
++            <groupId>org.apache.logging.log4j</groupId>
++            <artifactId>log4j-slf4j-impl</artifactId>
++            <version>2.15.1-SNAPSHOT</version>
++            <scope>compile</scope>
++        </dependency>
++        <dependency>
++            <groupId>org.apache.logging.log4j</groupId>
++            <artifactId>log4j-iostreams</artifactId>
++            <version>2.15.1-SNAPSHOT</version>
++            <scope>compile</scope>
++        </dependency>
++        <dependency>
++            <groupId>org.apache.logging.log4j</groupId>
++            <artifactId>log4j-api</artifactId>
++            <version>2.15.1-SNAPSHOT</version>
++            <scope>compile</scope>
++        </dependency>
          <dependency>
-@@ -34,8 +39,8 @@
+             <groupId>net.sf.trove4j</groupId>
+             <artifactId>trove4j</artifactId>
              <version>3.0.3</version>
          </dependency>
          <dependency>
@@ -65,7 +90,7 @@ index 91627ff0c..2537663aa 100644
              <version>${project.version}</version>
              <type>jar</type>
              <scope>compile</scope>
-@@ -50,14 +55,14 @@
+@@ -50,14 +79,14 @@
          <dependency>
              <groupId>net.sf.jopt-simple</groupId>
              <artifactId>jopt-simple</artifactId>
@@ -82,7 +107,7 @@ index 91627ff0c..2537663aa 100644
              <type>jar</type>
              <scope>compile</scope>
          </dependency>
-@@ -79,7 +84,7 @@
+@@ -79,7 +108,7 @@
          <dependency>
              <groupId>junit</groupId>
              <artifactId>junit</artifactId>
@@ -91,31 +116,7 @@ index 91627ff0c..2537663aa 100644
              <scope>test</scope>
          </dependency>
          <dependency>
-@@ -88,6 +93,23 @@
-             <version>1.3</version>
-             <scope>test</scope>
-         </dependency>
-+        <dependency>
-+            <groupId>org.apache.logging.log4j</groupId>
-+            <artifactId>log4j-core</artifactId>
-+            <version>2.15.0-SNAPSHOT</version>
-+            <scope>compile</scope>
-+        </dependency>
-+        <dependency>
-+            <groupId>org.apache.logging.log4j</groupId>
-+            <artifactId>log4j-slf4j-impl</artifactId>
-+            <version>2.15.0-SNAPSHOT</version>
-+            <scope>runtime</scope>
-+        </dependency>
-+        <dependency>
-+            <groupId>org.apache.logging.log4j</groupId>
-+            <artifactId>log4j-iostreams</artifactId>
-+            <version>2.15.0-SNAPSHOT</version>
-+        </dependency>
-     </dependencies>
- 
-     <!-- required until fixed plexus-compiler-eclipse is deployed -->
-@@ -100,49 +122,19 @@
+@@ -100,49 +129,19 @@
  
      <!-- This builds a completely 'ready to start' jar with all dependencies inside -->
      <build>
@@ -168,7 +169,7 @@ index 91627ff0c..2537663aa 100644
                              <Implementation-Vendor>Bukkit Team</Implementation-Vendor>
                              <Specification-Title>Bukkit</Specification-Title>
                              <Specification-Version>${api.version}</Specification-Version>
-@@ -171,30 +163,10 @@
+@@ -171,30 +170,10 @@
                      </archive>
                  </configuration>
              </plugin>
@@ -200,7 +201,7 @@ index 91627ff0c..2537663aa 100644
                  <executions>
                      <execution>
                          <phase>package</phase>
-@@ -256,16 +228,15 @@
+@@ -256,16 +235,15 @@
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-compiler-plugin</artifactId>
@@ -219,7 +220,7 @@ index 91627ff0c..2537663aa 100644
                      <dependency>
                          <groupId>org.codehaus.plexus</groupId>
                          <artifactId>plexus-compiler-eclipse</artifactId>
-@@ -276,7 +247,7 @@
+@@ -276,7 +254,7 @@
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-surefire-plugin</artifactId>
