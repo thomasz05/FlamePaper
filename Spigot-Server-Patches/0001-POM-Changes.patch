@@ -1,11 +1,11 @@
-From 386a4f347cce16bc85930e6949f3b909b73403d9 Mon Sep 17 00:00:00 2001
+From 2b89b2b537c11a5a707b6cdfb13c7e17c2f0993b Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Thu, 19 Mar 2015 19:41:15 -0500
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 91627ff0c..2c333a2cc 100644
+index 91627ff0c..1aca69b60 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -1,41 +1,70 @@
@@ -90,7 +90,7 @@ index 91627ff0c..2c333a2cc 100644
              <version>${project.version}</version>
              <type>jar</type>
              <scope>compile</scope>
-@@ -50,14 +79,14 @@
+@@ -50,28 +79,28 @@
          <dependency>
              <groupId>net.sf.jopt-simple</groupId>
              <artifactId>jopt-simple</artifactId>
@@ -104,6 +104,22 @@ index 91627ff0c..2c333a2cc 100644
              <artifactId>jline</artifactId>
 -            <version>2.12</version>
 +            <version>2.14.6</version>
+             <type>jar</type>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.xerial</groupId>
+             <artifactId>sqlite-jdbc</artifactId>
+-            <version>3.7.2</version>
++            <version>3.36.0</version>
+             <type>jar</type>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+             <groupId>mysql</groupId>
+             <artifactId>mysql-connector-java</artifactId>
+-            <version>5.1.14</version>
++            <version>8.0.27</version>
              <type>jar</type>
              <scope>compile</scope>
          </dependency>
