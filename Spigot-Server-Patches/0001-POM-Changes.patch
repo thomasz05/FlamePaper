@@ -1,11 +1,11 @@
-From b70ed4aac3f74d76bc939087360af2226e9c8848 Mon Sep 17 00:00:00 2001
+From 386a4f347cce16bc85930e6949f3b909b73403d9 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Thu, 19 Mar 2015 19:41:15 -0500
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 91627ff0c..443d2040c 100644
+index 91627ff0c..2c333a2cc 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -1,41 +1,70 @@
@@ -112,7 +112,7 @@ index 91627ff0c..443d2040c 100644
              <groupId>junit</groupId>
              <artifactId>junit</artifactId>
 -            <version>${junit.version}</version>
-+            <version>4.11</version>
++            <version>4.13.2</version>
              <scope>test</scope>
          </dependency>
          <dependency>
@@ -201,7 +201,16 @@ index 91627ff0c..443d2040c 100644
                  <executions>
                      <execution>
                          <phase>package</phase>
-@@ -256,16 +235,15 @@
+@@ -239,7 +218,7 @@
+             <plugin>
+                 <groupId>net.md-5</groupId>
+                 <artifactId>specialsource-maven-plugin</artifactId>
+-                <version>1.2.1</version>
++                <version>1.2.3</version>
+                 <executions>
+                     <execution>
+                         <phase>package</phase>
+@@ -256,32 +235,31 @@
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-compiler-plugin</artifactId>
@@ -220,7 +229,11 @@ index 91627ff0c..443d2040c 100644
                      <dependency>
                          <groupId>org.codehaus.plexus</groupId>
                          <artifactId>plexus-compiler-eclipse</artifactId>
-@@ -276,7 +254,7 @@
+-                        <version>2.5.0-spigotmc</version>
++                        <version>2.8.5-spigotmc</version>
+                     </dependency>
+                 </dependencies>
+             </plugin>
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-surefire-plugin</artifactId>
@@ -229,6 +242,12 @@ index 91627ff0c..443d2040c 100644
                  <configuration>
                      <workingDirectory>${basedir}/target/test-server</workingDirectory>
                      <excludes>
+                         <exclude>org/bukkit/craftbukkit/inventory/ItemStack*Test.java</exclude>
+-                    </excludes>
++                    </excludes> 
+                 </configuration>
+             </plugin>
+         </plugins>
 diff --git a/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java b/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
 index c110e0c2b..5540dde51 100644
 --- a/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
