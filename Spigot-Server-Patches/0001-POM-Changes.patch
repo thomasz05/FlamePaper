@@ -1,11 +1,11 @@
-From 2b89b2b537c11a5a707b6cdfb13c7e17c2f0993b Mon Sep 17 00:00:00 2001
+From f8b4599b2ea3a4a6bfdb3d77cb4972b7fb7dc253 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Thu, 19 Mar 2015 19:41:15 -0500
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 91627ff0c..1aca69b60 100644
+index 91627ff0c..34b7bc760 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -1,41 +1,70 @@
@@ -111,7 +111,7 @@ index 91627ff0c..1aca69b60 100644
              <groupId>org.xerial</groupId>
              <artifactId>sqlite-jdbc</artifactId>
 -            <version>3.7.2</version>
-+            <version>3.36.0</version>
++            <version>3.36.0.3</version>
              <type>jar</type>
              <scope>compile</scope>
          </dependency>
