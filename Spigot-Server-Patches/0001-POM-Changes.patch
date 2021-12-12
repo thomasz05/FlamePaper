@@ -1,14 +1,14 @@
-From 3c8b9ac6d9b0237aaa0eff5a6dd2b3f4d243c3eb Mon Sep 17 00:00:00 2001
+From d6db0dd4b16050dc892718e0e1c152444cbbc328 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Thu, 19 Mar 2015 19:41:15 -0500
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 91627ff0c..ad5ae48da 100644
+index 91627ff0c..244be3dea 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -1,41 +1,75 @@
+@@ -1,41 +1,77 @@
  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
      <modelVersion>4.0.0</modelVersion>
@@ -24,6 +24,8 @@ index 91627ff0c..ad5ae48da 100644
 +    <url>https://github.com/2lstudios-mc/FlamePaper/</url>
  
      <properties>
++        <maven.compiler.source>1.8</maven.compiler.source>
++        <maven.compiler.target>1.8</maven.compiler.target>
          <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
          <api.version>unknown</api.version>
 -        <junit.version>4.11</junit.version>
@@ -95,7 +97,7 @@ index 91627ff0c..ad5ae48da 100644
              <version>${project.version}</version>
              <type>jar</type>
              <scope>compile</scope>
-@@ -50,28 +84,28 @@
+@@ -50,28 +86,28 @@
          <dependency>
              <groupId>net.sf.jopt-simple</groupId>
              <artifactId>jopt-simple</artifactId>
@@ -128,7 +130,7 @@ index 91627ff0c..ad5ae48da 100644
              <type>jar</type>
              <scope>compile</scope>
          </dependency>
-@@ -79,7 +113,7 @@
+@@ -79,7 +115,7 @@
          <dependency>
              <groupId>junit</groupId>
              <artifactId>junit</artifactId>
@@ -137,7 +139,7 @@ index 91627ff0c..ad5ae48da 100644
              <scope>test</scope>
          </dependency>
          <dependency>
-@@ -100,49 +134,19 @@
+@@ -100,49 +136,19 @@
  
      <!-- This builds a completely 'ready to start' jar with all dependencies inside -->
      <build>
@@ -190,7 +192,7 @@ index 91627ff0c..ad5ae48da 100644
                              <Implementation-Vendor>Bukkit Team</Implementation-Vendor>
                              <Specification-Title>Bukkit</Specification-Title>
                              <Specification-Version>${api.version}</Specification-Version>
-@@ -171,30 +175,10 @@
+@@ -171,30 +177,10 @@
                      </archive>
                  </configuration>
              </plugin>
@@ -222,7 +224,7 @@ index 91627ff0c..ad5ae48da 100644
                  <executions>
                      <execution>
                          <phase>package</phase>
-@@ -239,7 +223,7 @@
+@@ -239,7 +225,7 @@
              <plugin>
                  <groupId>net.md-5</groupId>
                  <artifactId>specialsource-maven-plugin</artifactId>
@@ -231,7 +233,7 @@ index 91627ff0c..ad5ae48da 100644
                  <executions>
                      <execution>
                          <phase>package</phase>
-@@ -256,32 +240,31 @@
+@@ -256,32 +242,31 @@
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-compiler-plugin</artifactId>
