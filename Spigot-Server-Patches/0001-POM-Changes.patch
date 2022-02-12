@@ -1,14 +1,14 @@
-From 86e23bcef1d77f4bf8be39964f9b89a68ed51f90 Mon Sep 17 00:00:00 2001
+From 964bae620dcf3c83826ff05c8c8e0410928446d2 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Thu, 19 Mar 2015 19:41:15 -0500
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 91627ff0c..9582ae487 100644
+index 91627ff0..3071e4a2 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -1,41 +1,59 @@
+@@ -1,31 +1,38 @@
  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
      <modelVersion>4.0.0</modelVersion>
@@ -55,20 +55,8 @@ index 91627ff0c..9582ae487 100644
 +    </repositories>
  
      <dependencies>
-+        <dependency>
-+            <groupId>org.fusesource.jansi</groupId>
-+            <artifactId>jansi</artifactId>
-+            <version>2.4.0</version>
-+        </dependency>
-+        <dependency>
-+            <groupId>org.apache.logging.log4j</groupId>
-+            <artifactId>log4j-core</artifactId>
-+            <version>2.17.1</version>
-+            <scope>compile</scope>
-+        </dependency>
          <dependency>
-             <groupId>net.sf.trove4j</groupId>
-             <artifactId>trove4j</artifactId>
+@@ -34,12 +41,18 @@
              <version>3.0.3</version>
          </dependency>
          <dependency>
@@ -79,49 +67,35 @@ index 91627ff0c..9582ae487 100644
              <version>${project.version}</version>
              <type>jar</type>
              <scope>compile</scope>
-@@ -50,28 +68,28 @@
-         <dependency>
-             <groupId>net.sf.jopt-simple</groupId>
-             <artifactId>jopt-simple</artifactId>
--            <version>3.2</version>
-+            <version>5.0.4</version>
-             <type>jar</type>
-             <scope>compile</scope>
          </dependency>
++        <dependency>
++            <groupId>org.apache.logging.log4j</groupId>
++            <artifactId>log4j-core</artifactId>
++            <version>2.17.1</version>
++            <scope>compile</scope>
++        </dependency>
+         <dependency>
+             <groupId>org.spigotmc</groupId>
+             <artifactId>minecraft-server</artifactId>
+@@ -57,7 +70,7 @@
          <dependency>
              <groupId>jline</groupId>
              <artifactId>jline</artifactId>
 -            <version>2.12</version>
-+            <version>2.14.6</version>
++            <version>2.12.1</version>
              <type>jar</type>
              <scope>compile</scope>
          </dependency>
-         <dependency>
-             <groupId>org.xerial</groupId>
-             <artifactId>sqlite-jdbc</artifactId>
--            <version>3.7.2</version>
-+            <version>3.36.0.3</version>
-             <type>jar</type>
-             <scope>compile</scope>
-         </dependency>
-         <dependency>
-             <groupId>mysql</groupId>
-             <artifactId>mysql-connector-java</artifactId>
--            <version>5.1.14</version>
-+            <version>5.1.49</version>
-             <type>jar</type>
-             <scope>compile</scope>
-         </dependency>
-@@ -79,7 +97,7 @@
+@@ -79,7 +92,7 @@
          <dependency>
              <groupId>junit</groupId>
              <artifactId>junit</artifactId>
 -            <version>${junit.version}</version>
-+            <version>4.13.2</version>
++            <version>4.11</version>
              <scope>test</scope>
          </dependency>
          <dependency>
-@@ -100,53 +118,24 @@
+@@ -100,53 +113,24 @@
  
      <!-- This builds a completely 'ready to start' jar with all dependencies inside -->
      <build>
@@ -179,7 +153,7 @@ index 91627ff0c..9582ae487 100644
                          </manifestEntries>
                          <manifestSections>
                              <manifestSection>
-@@ -171,30 +160,10 @@
+@@ -171,30 +155,10 @@
                      </archive>
                  </configuration>
              </plugin>
@@ -211,7 +185,7 @@ index 91627ff0c..9582ae487 100644
                  <executions>
                      <execution>
                          <phase>package</phase>
-@@ -231,6 +200,16 @@
+@@ -231,6 +195,16 @@
                                      <shadedPattern>net.minecraft.server.v${minecraft_version}</shadedPattern>
                                  </relocation>
                              </relocations>
@@ -228,7 +202,7 @@ index 91627ff0c..9582ae487 100644
                          </configuration>
                      </execution>
                  </executions>
-@@ -239,7 +218,7 @@
+@@ -239,7 +213,7 @@
              <plugin>
                  <groupId>net.md-5</groupId>
                  <artifactId>specialsource-maven-plugin</artifactId>
@@ -237,7 +211,7 @@ index 91627ff0c..9582ae487 100644
                  <executions>
                      <execution>
                          <phase>package</phase>
-@@ -256,32 +235,31 @@
+@@ -256,32 +230,31 @@
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-compiler-plugin</artifactId>
@@ -276,7 +250,7 @@ index 91627ff0c..9582ae487 100644
              </plugin>
          </plugins>
 diff --git a/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java b/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
-index c110e0c2b..5540dde51 100644
+index c110e0c2..5540dde5 100644
 --- a/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
 +++ b/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
 @@ -11,7 +11,7 @@ public class PathfinderGoalNearestAttackableTarget<T extends EntityLiving> exten
@@ -289,7 +263,7 @@ index c110e0c2b..5540dde51 100644
  
      public PathfinderGoalNearestAttackableTarget(EntityCreature entitycreature, Class<T> oclass, boolean flag) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/util/Versioning.java b/src/main/java/org/bukkit/craftbukkit/util/Versioning.java
-index 93046379d..3a4b14246 100644
+index 93046379..3a4b1424 100644
 --- a/src/main/java/org/bukkit/craftbukkit/util/Versioning.java
 +++ b/src/main/java/org/bukkit/craftbukkit/util/Versioning.java
 @@ -11,7 +11,7 @@ public final class Versioning {

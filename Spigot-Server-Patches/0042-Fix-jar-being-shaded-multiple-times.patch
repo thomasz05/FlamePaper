@@ -1,14 +1,14 @@
-From c4fd4d807a56dc4380bf8dc38cbe105035bdad45 Mon Sep 17 00:00:00 2001
+From 29dbe271e7ab1837b6cb2c828a6d29fff92f681a Mon Sep 17 00:00:00 2001
 From: Jedediah Smith <jedediah@silencegreys.com>
 Date: Thu, 30 Apr 2015 22:42:34 -0400
 Subject: [PATCH] Fix jar being shaded multiple times
 
 
 diff --git a/pom.xml b/pom.xml
-index 9582ae487..0c7f31d49 100644
+index 3071e4a2..a3eadf9f 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -126,6 +126,7 @@
+@@ -121,6 +121,7 @@
                  <artifactId>maven-jar-plugin</artifactId>
                  <version>3.2.0</version>
                  <configuration>
