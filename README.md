@@ -5,18 +5,13 @@ High performance Spigot fork that aims to fix gameplay and mechanics inconsisten
 
 [Discord Support and Project Discussion](https://discord.gg/gF36AT3)
 
-
-
-
 How To (Server Admins)
 ------
-Download a copy of Flamepaper from our mirror [here](https://2lstudios.dev/mirror/FlamePaper):
-
+Download a copy of FlamePaper. [MC-Market](https://www.mc-market.org/resources/19660/)
 
 Run the FlamePaper jar directly from your server. Just like old times
 
 FlamePaper requires **JRE 8** or above.
-
 
 How To (Compiling From Source)
 ------
