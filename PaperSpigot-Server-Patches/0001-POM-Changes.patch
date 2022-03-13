@@ -1,0 +1,35 @@
+From 00023aed87c3088da54db5c6cd279d75f00b715e Mon Sep 17 00:00:00 2001
+From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
+Date: Sun, 13 Mar 2022 20:08:10 -0300
+Subject: [PATCH] POM Changes
+
+
+diff --git a/pom.xml b/pom.xml
+index a3eadf9fc..c0eed0e02 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -1,8 +1,8 @@
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
+-    <groupId>org.github.paperspigot</groupId>
+-    <artifactId>paperspigot</artifactId>
++    <groupId>dev._2lstudios</groupId>
++    <artifactId>lamepaper</artifactId>
+     <packaging>jar</packaging>
+     <version>1.8.8-R0.1-SNAPSHOT</version>
+     <name>FlamePaper</name>
+@@ -41,8 +41,8 @@
+             <version>3.0.3</version>
+         </dependency>
+         <dependency>
+-            <groupId>org.github.paperspigot</groupId>
+-            <artifactId>paperspigot-api</artifactId>
++            <groupId>dev._2lstudios</groupId>
++            <artifactId>flamepaper-api</artifactId>
+             <version>${project.version}</version>
+             <type>jar</type>
+             <scope>compile</scope>
+-- 
+2.32.0
+

@@ -9,18 +9,18 @@
         <version>9</version>
     </parent>
 
-    <groupId>org.github.paperspigot</groupId>
-    <artifactId>paperspigot-parent</artifactId>
+    <groupId>dev._2lstudios</groupId>
+    <artifactId>flamepaper-parent</artifactId>
     <version>dev-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>PaperSpigot-Parent</name>
-    <description>Parent project for all PaperSpigot modules.</description>
-    <url>https://github.com/PaperSpigot/Spigot</url>
+    <name>FlamePaper-Parent</name>
+    <description>Parent project for all FlamePaper modules.</description>
+    <url>https://github.com/2lstudios-mc/FlamePaper</url>
 
     <modules>
-        <module>PaperSpigot-Server</module>
-        <module>PaperSpigot-API</module>
+        <module>FlamePaper-Server</module>
+        <module>FlamePaper-API</module>
     </modules>
 
     <properties>
