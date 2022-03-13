@@ -1,16 +1,16 @@
-From 29dbe271e7ab1837b6cb2c828a6d29fff92f681a Mon Sep 17 00:00:00 2001
+From da178f24be4b2d85b189587295c4cdafc9c2f6d8 Mon Sep 17 00:00:00 2001
 From: Jedediah Smith <jedediah@silencegreys.com>
 Date: Thu, 30 Apr 2015 22:42:34 -0400
 Subject: [PATCH] Fix jar being shaded multiple times
 
 
 diff --git a/pom.xml b/pom.xml
-index 3071e4a2..a3eadf9f 100644
+index fd051da01..6aaba5027 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -121,6 +121,7 @@
+@@ -130,6 +130,7 @@
                  <artifactId>maven-jar-plugin</artifactId>
-                 <version>3.2.0</version>
+                 <version>2.5</version>
                  <configuration>
 +                    <forceCreation>true</forceCreation> <!-- Required to prevent shading the jar multiple times -->
                      <archive>

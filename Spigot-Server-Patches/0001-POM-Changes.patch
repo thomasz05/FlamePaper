@@ -1,14 +1,14 @@
-From 964bae620dcf3c83826ff05c8c8e0410928446d2 Mon Sep 17 00:00:00 2001
+From 4691e097cc9813eb7d9e9e1e5da41e94eaeb15c3 Mon Sep 17 00:00:00 2001
 From: Zach Brown <zach.brown@destroystokyo.com>
 Date: Thu, 19 Mar 2015 19:41:15 -0500
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 91627ff0..3071e4a2 100644
+index 91627ff0c..fd051da01 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -1,31 +1,38 @@
+@@ -1,12 +1,12 @@
  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
      <modelVersion>4.0.0</modelVersion>
@@ -20,21 +20,20 @@ index 91627ff0..3071e4a2 100644
      <version>1.8.8-R0.1-SNAPSHOT</version>
 -    <name>Spigot</name>
 -    <url>http://www.spigotmc.org</url>
-+    <name>FlamePaper</name>
-+    <url>https://github.com/2lstudios-mc/FlamePaper/</url>
++    <name>PaperSpigot</name>
++    <url>https://hub.spigotmc.org/stash/projects/PAPER/</url>
  
      <properties>
-+        <maven.compiler.source>1.8</maven.compiler.source>
-+        <maven.compiler.target>1.8</maven.compiler.target>
          <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-         <api.version>unknown</api.version>
--        <junit.version>4.11</junit.version>
-         <minecraft.version>1.8.8</minecraft.version>
+@@ -16,13 +16,14 @@
          <minecraft_version>1_8_R3</minecraft_version>
          <buildtag.prefix>git-Bukkit-</buildtag.prefix>
          <buildtag.suffix></buildtag.suffix>
 -        <maven.compiler.source>1.6</maven.compiler.source>
 -        <maven.compiler.target>1.6</maven.compiler.target>
++        <!--PaperSpigot - Bump to 1.8 - This will haunt me -->
++        <maven.compiler.source>1.8</maven.compiler.source>
++        <maven.compiler.target>1.8</maven.compiler.target>
      </properties>
  
      <parent>
@@ -45,18 +44,7 @@ index 91627ff0..3071e4a2 100644
          <version>dev-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-+    
-+    <repositories>
-+        <repository>
-+            <id>apache</id>
-+            <name>apache snapshots</name>
-+            <url>https://repository.apache.org/snapshots</url>
-+        </repository>
-+    </repositories>
- 
-     <dependencies>
-         <dependency>
-@@ -34,12 +41,18 @@
+@@ -34,8 +35,8 @@
              <version>3.0.3</version>
          </dependency>
          <dependency>
@@ -67,42 +55,22 @@ index 91627ff0..3071e4a2 100644
              <version>${project.version}</version>
              <type>jar</type>
              <scope>compile</scope>
-         </dependency>
-+        <dependency>
-+            <groupId>org.apache.logging.log4j</groupId>
-+            <artifactId>log4j-core</artifactId>
-+            <version>2.17.1</version>
-+            <scope>compile</scope>
-+        </dependency>
-         <dependency>
-             <groupId>org.spigotmc</groupId>
-             <artifactId>minecraft-server</artifactId>
-@@ -57,7 +70,7 @@
-         <dependency>
-             <groupId>jline</groupId>
-             <artifactId>jline</artifactId>
--            <version>2.12</version>
-+            <version>2.12.1</version>
-             <type>jar</type>
-             <scope>compile</scope>
-         </dependency>
-@@ -79,7 +92,7 @@
-         <dependency>
-             <groupId>junit</groupId>
-             <artifactId>junit</artifactId>
--            <version>${junit.version}</version>
-+            <version>4.11</version>
-             <scope>test</scope>
-         </dependency>
-         <dependency>
-@@ -100,53 +113,24 @@
+@@ -96,6 +97,11 @@
+             <id>spigotmc-public</id>
+             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+         </pluginRepository>
++        <!-- PaperSpigot - Repo for gitdescribe -->
++        <pluginRepository>
++            <id>destroystokyo</id>
++            <url>https://ci.destroystokyo.com/plugin/repository/everything/</url>
++        </pluginRepository>
+     </pluginRepositories>
  
      <!-- This builds a completely 'ready to start' jar with all dependencies inside -->
-     <build>
-+        <sourceDirectory>src/main/java</sourceDirectory>
+@@ -103,36 +109,22 @@
          <defaultGoal>install</defaultGoal>
          <plugins>
--            <plugin>
+             <plugin>
 -                <groupId>net.md-5</groupId>
 -                <artifactId>scriptus</artifactId>
 -                <version>0.2</version>
@@ -133,13 +101,26 @@ index 91627ff0..3071e4a2 100644
 -                    </execution>
 -                </executions>
 -            </plugin>  
++            <groupId>com.lukegb.mojo</groupId>
++            <artifactId>gitdescribe-maven-plugin</artifactId>
++            <version>1.3</version>
++            <configuration>
++                <outputPrefix>git-PaperSpigot-</outputPrefix>
++                <scmDirectory>..</scmDirectory>
++            </configuration>
++            <executions>
++                <execution>
++                    <phase>compile</phase>
++                    <goals>
++                        <goal>gitdescribe</goal>
++                    </goals>
++                </execution>
++            </executions>
++        </plugin>
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-jar-plugin</artifactId>
--                <version>2.5</version>
-+                <version>3.2.0</version>
-                 <configuration>
-                     <archive>
+@@ -142,7 +134,7 @@
                          <manifestEntries>
                              <Main-Class>org.bukkit.craftbukkit.Main</Main-Class>
                              <Implementation-Title>CraftBukkit</Implementation-Title>
@@ -148,12 +129,7 @@ index 91627ff0..3071e4a2 100644
                              <Implementation-Vendor>Bukkit Team</Implementation-Vendor>
                              <Specification-Title>Bukkit</Specification-Title>
                              <Specification-Version>${api.version}</Specification-Version>
-                             <Specification-Vendor>Bukkit Team</Specification-Vendor>
-+                            <Multi-Release>true</Multi-Release>
-                         </manifestEntries>
-                         <manifestSections>
-                             <manifestSection>
-@@ -171,30 +155,10 @@
+@@ -171,26 +163,6 @@
                      </archive>
                  </configuration>
              </plugin>
@@ -180,77 +156,8 @@ index 91627ff0..3071e4a2 100644
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-shade-plugin</artifactId>
--                <version>2.3</version>
-+                <version>3.2.4</version>
-                 <executions>
-                     <execution>
-                         <phase>package</phase>
-@@ -231,6 +195,16 @@
-                                     <shadedPattern>net.minecraft.server.v${minecraft_version}</shadedPattern>
-                                 </relocation>
-                             </relocations>
-+                            <!-- Paper start - Override Log4j -->
-+                            <filters>
-+                                <filter>
-+                                    <artifact>org.spigotmc:minecraft-server:**</artifact>
-+                                    <excludes>
-+                                        <exclude>org/apache/logging/log4j/**</exclude>
-+                                    </excludes>
-+                                </filter>
-+                            </filters>
-+                            <!-- Paper end - Override Log4j -->
-                         </configuration>
-                     </execution>
-                 </executions>
-@@ -239,7 +213,7 @@
-             <plugin>
-                 <groupId>net.md-5</groupId>
-                 <artifactId>specialsource-maven-plugin</artifactId>
--                <version>1.2.1</version>
-+                <version>1.2.3</version>
-                 <executions>
-                     <execution>
-                         <phase>package</phase>
-@@ -256,32 +230,31 @@
-             <plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-compiler-plugin</artifactId>
--                <!-- versions after this appear to be broken -->
--                <version>3.1</version>
-+                <version>3.8.1</version>
-                 <configuration>
-                     <!-- we use the Eclipse compiler as it doesn't need a JDK -->
-                     <compilerId>eclipse</compilerId>
-                     <!-- source and target are ignored if this isn't true -->
-                     <optimize>true</optimize>
-+                    <release>11</release>
-                 </configuration>
-                 <dependencies>
--                    <!-- we need our custom version as it fixes some bugs on case sensitive file systems -->
-                     <dependency>
-                         <groupId>org.codehaus.plexus</groupId>
-                         <artifactId>plexus-compiler-eclipse</artifactId>
--                        <version>2.5.0-spigotmc</version>
-+                        <version>2.8.5-spigotmc</version>
-                     </dependency>
-                 </dependencies>
-             </plugin>
-             <plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-surefire-plugin</artifactId>
--                <version>2.18</version>
-+                <version>2.22.2</version>
-                 <configuration>
-                     <workingDirectory>${basedir}/target/test-server</workingDirectory>
-                     <excludes>
-                         <exclude>org/bukkit/craftbukkit/inventory/ItemStack*Test.java</exclude>
--                    </excludes>
-+                    </excludes> 
-                 </configuration>
-             </plugin>
-         </plugins>
 diff --git a/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java b/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
-index c110e0c2..5540dde5 100644
+index c110e0c2b..5540dde51 100644
 --- a/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
 +++ b/src/main/java/net/minecraft/server/PathfinderGoalNearestAttackableTarget.java
 @@ -11,7 +11,7 @@ public class PathfinderGoalNearestAttackableTarget<T extends EntityLiving> exten
@@ -263,7 +170,7 @@ index c110e0c2..5540dde5 100644
  
      public PathfinderGoalNearestAttackableTarget(EntityCreature entitycreature, Class<T> oclass, boolean flag) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/util/Versioning.java b/src/main/java/org/bukkit/craftbukkit/util/Versioning.java
-index 93046379..3a4b1424 100644
+index 93046379d..3a4b14246 100644
 --- a/src/main/java/org/bukkit/craftbukkit/util/Versioning.java
 +++ b/src/main/java/org/bukkit/craftbukkit/util/Versioning.java
 @@ -11,7 +11,7 @@ public final class Versioning {
