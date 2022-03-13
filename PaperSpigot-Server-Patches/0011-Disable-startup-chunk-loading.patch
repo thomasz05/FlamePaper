@@ -1,11 +1,11 @@
-From d2e56c58cfebc5bac17259b26ce28e668222aa07 Mon Sep 17 00:00:00 2001
+From 3d2c26dc0604b570ba90f145ec280490297002b4 Mon Sep 17 00:00:00 2001
 From: unknown <LinsaFTW@users.noreply.github.com>
 Date: Mon, 7 Dec 2020 04:16:53 -0300
 Subject: [PATCH] Disable startup chunk loading
 
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index aa4c12f6a..05245beb3 100644
+index e779442b3..25083f74c 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -349,20 +349,6 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs

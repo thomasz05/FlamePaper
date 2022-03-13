@@ -1,11 +1,11 @@
-From 00023aed87c3088da54db5c6cd279d75f00b715e Mon Sep 17 00:00:00 2001
+From 67f958a0ecf40c2986af14d2506a710389dc5b7b Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Sun, 13 Mar 2022 20:08:10 -0300
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index a3eadf9fc..c0eed0e02 100644
+index 644305e68..c8e1826ad 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -1,8 +1,8 @@
@@ -18,8 +18,8 @@ index a3eadf9fc..c0eed0e02 100644
 +    <artifactId>lamepaper</artifactId>
      <packaging>jar</packaging>
      <version>1.8.8-R0.1-SNAPSHOT</version>
-     <name>FlamePaper</name>
-@@ -41,8 +41,8 @@
+     <name>PaperSpigot</name>
+@@ -35,8 +35,8 @@
              <version>3.0.3</version>
          </dependency>
          <dependency>
