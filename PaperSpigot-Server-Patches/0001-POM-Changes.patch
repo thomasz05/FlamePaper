@@ -1,21 +1,20 @@
-From d2710ace05983e8e2fc1643b09c4cb9cd208250f Mon Sep 17 00:00:00 2001
+From 61a55e270acda2f317bb61b67e26f6c0a099a8a3 Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Sun, 13 Mar 2022 20:08:10 -0300
 Subject: [PATCH] POM Changes
 
 
 diff --git a/pom.xml b/pom.xml
-index 644305e68..83f00d62b 100644
+index 644305e68..180a1fa44 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -1,11 +1,11 @@
+@@ -1,11 +1,10 @@
  <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
      <modelVersion>4.0.0</modelVersion>
 -    <groupId>org.github.paperspigot</groupId>
 -    <artifactId>paperspigot</artifactId>
 +    <groupId>dev._2lstudios</groupId>
-+    <artifactId>flamepaper</artifactId>
      <packaging>jar</packaging>
      <version>1.8.8-R0.1-SNAPSHOT</version>
 -    <name>PaperSpigot</name>
@@ -23,7 +22,7 @@ index 644305e68..83f00d62b 100644
      <url>https://hub.spigotmc.org/stash/projects/PAPER/</url>
  
      <properties>
-@@ -22,8 +22,8 @@
+@@ -22,8 +21,8 @@
      </properties>
  
      <parent>
@@ -34,7 +33,7 @@ index 644305e68..83f00d62b 100644
          <version>dev-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-@@ -35,8 +35,8 @@
+@@ -35,8 +34,8 @@
              <version>3.0.3</version>
          </dependency>
          <dependency>
@@ -45,6 +44,23 @@ index 644305e68..83f00d62b 100644
              <version>${project.version}</version>
              <type>jar</type>
              <scope>compile</scope>
+@@ -44,7 +43,7 @@
+         <dependency>
+             <groupId>org.apache.logging.log4j</groupId>
+             <artifactId>log4j-core</artifactId>
+-            <version>2.17.0</version> <!-- Paper - Update Log4j -->
++            <version>2.17.2</version> <!-- Paper - Update Log4j -->
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+@@ -112,6 +111,7 @@
+ 
+     <!-- This builds a completely 'ready to start' jar with all dependencies inside -->
+     <build>
++        <finalName>FlamePaper</finalName>
+         <defaultGoal>install</defaultGoal>
+         <plugins>
+             <plugin>
 -- 
 2.32.0
 
