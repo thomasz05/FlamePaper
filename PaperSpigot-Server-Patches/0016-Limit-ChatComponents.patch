@@ -1,11 +1,11 @@
-From eb58e902c902a39a0a248893a44ac5e2c9a7a1d7 Mon Sep 17 00:00:00 2001
+From 32f68aab6d78aedd35d0e6a9272ea716d7260f6f Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Mon, 21 Jun 2021 03:29:33 -0300
 Subject: [PATCH] Limit ChatComponents
 
 
 diff --git a/src/main/java/net/minecraft/server/IChatBaseComponent.java b/src/main/java/net/minecraft/server/IChatBaseComponent.java
-index 463cfe49f..52743978c 100644
+index 463cfe49f..ff1e22676 100644
 --- a/src/main/java/net/minecraft/server/IChatBaseComponent.java
 +++ b/src/main/java/net/minecraft/server/IChatBaseComponent.java
 @@ -46,11 +46,25 @@ public interface IChatBaseComponent extends Iterable<IChatBaseComponent> {
@@ -26,7 +26,7 @@ index 463cfe49f..52743978c 100644
                          JsonElement jsonelement1 = (JsonElement) iterator.next();
 +
 +                        // FlamePaper start - Limit ChatComponents
-+                        if (jsonelement.isJsonArray()) {
++                        if (jsonelement1.isJsonArray()) {
 +                            throw new JsonParseException("Stacked ChatComponent array");
 +                        }
 +                        // FlamePaper end - Limit Chatcomponents
