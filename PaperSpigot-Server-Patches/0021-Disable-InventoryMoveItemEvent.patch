@@ -1,4 +1,4 @@
-From cf3816df9f197dc4278222326d5e7fa31bc16048 Mon Sep 17 00:00:00 2001
+From 4a0fa4b45d9c35adb80be0c2bb80b471561fdd15 Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Sun, 12 Dec 2021 20:48:26 -0300
 Subject: [PATCH] Disable InventoryMoveItemEvent
@@ -102,13 +102,13 @@ index e43cb912c..2ced846b5 100644
      public static TileEntityHopper getHopper(World world, BlockPosition pos) {
          if (world.getType(pos).getBlock() != Blocks.HOPPER) return null;
 diff --git a/src/main/java/org/github/paperspigot/PaperSpigotConfig.java b/src/main/java/org/github/paperspigot/PaperSpigotConfig.java
-index 495618dfa..37ff6f7cf 100644
+index 85dda6fdc..b23357e01 100644
 --- a/src/main/java/org/github/paperspigot/PaperSpigotConfig.java
 +++ b/src/main/java/org/github/paperspigot/PaperSpigotConfig.java
-@@ -223,6 +223,11 @@ public class PaperSpigotConfig
-         warnForExcessiveVelocity = getBoolean("warnWhenSettingExcessiveVelocity", true);
+@@ -186,6 +186,11 @@ public class PaperSpigotConfig
+         bookMaxPages = getInt("book.max_pages", 5);
      }
- 
+     
 +    public static boolean isHopperFireIMIE;
 +    private static void isHopperFireIMIE() {
 +        isHopperFireIMIE = getBoolean("hopper.fire-inventory-move-item-event", true);
