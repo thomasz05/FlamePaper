@@ -1,41 +1,26 @@
-From a4d71b6700de504230e4925b345417098b7fbab5 Mon Sep 17 00:00:00 2001
+From ee42ce89d5ba674eab0e38c6113ed0e69c2f58c4 Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Thu, 27 Oct 2022 12:35:48 +0200
 Subject: [PATCH] Netty Bump
 
 
 diff --git a/pom.xml b/pom.xml
-index 98c82109b..7925f7f87 100644
+index 98c82109b..c380cc585 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -41,6 +41,26 @@
+@@ -41,6 +41,11 @@
              <type>jar</type>
              <scope>compile</scope>
          </dependency>
 +        <dependency>
 +            <groupId>io.netty</groupId>
-+            <artifactId>netty-handler</artifactId>
++            <artifactId>netty-all</artifactId>
 +            <version>4.1.84.Final</version>
-+        </dependency>
-+        <dependency>
-+            <groupId>io.netty</groupId>
-+            <artifactId>netty-buffer</artifactId>
-+            <version>4.1.84.Final</version>
-+        </dependency>
-+        <dependency>
-+            <groupId>io.netty</groupId>
-+            <artifactId>netty-transport</artifactId>
-+            <version>4.1.84.Final</version>
-+        </dependency>
-+        <dependency>
-+            <groupId>io.netty</groupId>
-+            <artifactId>netty-common</artifactId>
-+            <version>4.1.84.Final</version>
-+        </dependency>   
++        </dependency>  
          <dependency>
              <groupId>org.apache.logging.log4j</groupId>
              <artifactId>log4j-core</artifactId>
-@@ -189,6 +209,7 @@
+@@ -189,6 +194,7 @@
                                      <artifact>org.spigotmc:minecraft-server:**</artifact>
                                      <excludes>
                                          <exclude>org/apache/logging/log4j/**</exclude>
