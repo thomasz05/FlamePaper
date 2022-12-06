@@ -1,4 +1,4 @@
-From ee42ce89d5ba674eab0e38c6113ed0e69c2f58c4 Mon Sep 17 00:00:00 2001
+From bec6a1d1696978d376bde9791b06be3d8432184d Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Thu, 27 Oct 2022 12:35:48 +0200
 Subject: [PATCH] Netty Bump
@@ -42,7 +42,7 @@ index 9d23c6c0c..ecf749839 100644
  
      protected void a(ChannelHandlerContext channelhandlercontext, Packet packet) throws Exception {
 diff --git a/src/main/java/net/minecraft/server/PacketDataSerializer.java b/src/main/java/net/minecraft/server/PacketDataSerializer.java
-index e2eb30546..2b596fefe 100644
+index e2eb30546..b98541bed 100644
 --- a/src/main/java/net/minecraft/server/PacketDataSerializer.java
 +++ b/src/main/java/net/minecraft/server/PacketDataSerializer.java
 @@ -6,9 +6,10 @@ import io.netty.buffer.ByteBufAllocator;
@@ -57,7 +57,7 @@ index e2eb30546..2b596fefe 100644
  import java.io.DataInput;
  import java.io.DataOutput;
  import java.io.IOException;
-@@ -16,6 +17,7 @@ import java.io.InputStream;
+@@ -16,15 +17,17 @@ import java.io.InputStream;
  import java.io.OutputStream;
  import java.nio.ByteBuffer;
  import java.nio.ByteOrder;
@@ -65,7 +65,9 @@ index e2eb30546..2b596fefe 100644
  import java.nio.channels.GatheringByteChannel;
  import java.nio.channels.ScatteringByteChannel;
  import java.nio.charset.Charset;
-@@ -24,7 +26,7 @@ import java.util.UUID;
++import java.nio.charset.StandardCharsets;
+ import java.util.UUID;
+ 
  import org.bukkit.craftbukkit.inventory.CraftItemStack; // CraftBukkit
  
  public class PacketDataSerializer extends ByteBuf {
@@ -74,17 +76,17 @@ index e2eb30546..2b596fefe 100644
      private final ByteBuf a;
  
      public PacketDataSerializer(ByteBuf bytebuf) {
-@@ -221,7 +223,8 @@ public class PacketDataSerializer extends ByteBuf {
+@@ -221,7 +224,8 @@ public class PacketDataSerializer extends ByteBuf {
          } else if (j < 0) {
              throw new DecoderException("The received encoded string buffer length is less than zero! Weird string!");
          } else {
 -            String s = new String(this.readBytes(j).array(), Charsets.UTF_8);
-+            String s = new String(ByteBufUtil.getBytes(this, this.readerIndex(), j), Charset.forName("UTF-8"));
-+            this.readerIndex(readerIndex() + j);
++            String s = toString(readerIndex(), j, StandardCharsets.UTF_8);
++            readerIndex(readerIndex() + j);
  
              if (s.length() > i) {
                  throw new DecoderException("The received string length is longer than maximum allowed (" + j + " > " + i + ")");
-@@ -243,583 +246,779 @@ public class PacketDataSerializer extends ByteBuf {
+@@ -243,583 +247,779 @@ public class PacketDataSerializer extends ByteBuf {
          }
      }
  
