@@ -1,14 +1,14 @@
-From 6f65cd86d3065ae27dec367a0a699f2c5608d009 Mon Sep 17 00:00:00 2001
+From 172a1e9722e819554547ad2bc00199ba5a2278e0 Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Tue, 15 Mar 2022 12:12:59 -0300
 Subject: [PATCH] Rename to FlamePaper
 
 
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index dee46b08a..0a0a8ce96 100644
+index e0742c04f..97a2c5f3c 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
-@@ -1051,7 +1051,7 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs
+@@ -1049,7 +1049,7 @@ public abstract class MinecraftServer implements Runnable, ICommandListener, IAs
      }
  
      public String getServerModName() {
@@ -18,7 +18,7 @@ index dee46b08a..0a0a8ce96 100644
  
      public CrashReport b(CrashReport crashreport) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 95142fcd4..9dc843794 100644
+index a463931e5..cc54494d9 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -127,7 +127,7 @@ import net.md_5.bungee.api.chat.BaseComponent;

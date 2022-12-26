@@ -1,11 +1,11 @@
-From 703fcb9220ddf881723624351b4e40cbc5ee69a9 Mon Sep 17 00:00:00 2001
+From b4a16785b80c1d8e48ea9e895c6c366f4934b13d Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Mon, 12 Dec 2022 00:11:20 +0100
 Subject: [PATCH] Use isActive instead of isOpen
 
 
 diff --git a/src/main/java/net/minecraft/server/NetworkManager.java b/src/main/java/net/minecraft/server/NetworkManager.java
-index 96a33cdba..dafdc983e 100644
+index e1e7bb6c0..fa4c4f06e 100644
 --- a/src/main/java/net/minecraft/server/NetworkManager.java
 +++ b/src/main/java/net/minecraft/server/NetworkManager.java
 @@ -119,7 +119,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet> {

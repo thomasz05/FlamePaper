@@ -1,4 +1,4 @@
-From bd41ac451cf47d57b8104cece09a7df905098a6e Mon Sep 17 00:00:00 2001
+From 2d20d2269e57bb97bd4a2b183c579d8e068ce271 Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Tue, 15 Mar 2022 10:57:28 -0300
 Subject: [PATCH] Disable entities loading chunks

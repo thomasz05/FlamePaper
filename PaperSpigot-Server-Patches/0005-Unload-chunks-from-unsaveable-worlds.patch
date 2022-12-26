@@ -1,4 +1,4 @@
-From 4b189ccc603af358a8917f36acb8a1238abc1149 Mon Sep 17 00:00:00 2001
+From 6395936675ff0d5ebf385a1d0f2c187beb860b7e Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Thu, 27 Oct 2022 14:45:04 +0200
 Subject: [PATCH] Unload chunks from unsaveable worlds
@@ -49,18 +49,19 @@ index c4dab42bd..a0dd029c4 100644
          return !this.world.savingDisabled;
      }
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 69485fa69..12270f8a0 100644
+index 69485fa69..a463931e5 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -1001,6 +1001,8 @@ public final class CraftServer implements Server {
-             } catch (ExceptionWorldConflict ex) {
+@@ -1002,6 +1002,9 @@ public final class CraftServer implements Server {
                  getLogger().log(Level.SEVERE, null, ex);
              }
-+        } else { // FlamePaper - Fix chunk memory leak
-+            handle.chunkProviderServer.unloadChunks(true);
          }
++        
++        // FlamePaper - Fix chunk memory leak
++        handle.chunkProviderServer.unloadChunks(true);
  
          worlds.remove(world.getName().toLowerCase());
+         console.worlds.remove(console.worlds.indexOf(handle));
 -- 
 2.37.3.windows.1
 
