@@ -1,4 +1,4 @@
-From 00ed0db1f4665c756f192d1ce44e7475193214ff Mon Sep 17 00:00:00 2001
+From 4106b46047c50ba78d60cf4763604f0433c3d3f5 Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Thu, 24 Mar 2022 02:39:26 -0300
 Subject: [PATCH] Dont load chunks for chests

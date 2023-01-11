@@ -1,11 +1,11 @@
-From fda30696fb722ae141d2f6b43ccbc126226b539a Mon Sep 17 00:00:00 2001
+From e4f9c125e005439c8ffef8de8b337b3945cd1b84 Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Thu, 22 Dec 2022 23:40:06 -0300
 Subject: [PATCH] Disable Idle Player Position Updates
 
 
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 1fd7d4be1..32a1860c3 100644
+index 89475b47e..ea34b2564 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -255,6 +255,11 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
