@@ -1,14 +1,14 @@
-From edc0bb44e4467e59e56abaef0c0655594d0b6d1b Mon Sep 17 00:00:00 2001
+From 2c37bdb25f2484e2c70d1a148927c51f1076f772 Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Sun, 13 Mar 2022 22:22:09 -0300
 Subject: [PATCH] Update Version Command
 
 
 diff --git a/src/main/java/org/bukkit/command/defaults/VersionCommand.java b/src/main/java/org/bukkit/command/defaults/VersionCommand.java
-index bd3138c00..66ff1903e 100644
+index bd3138c00..5aa5731ad 100644
 --- a/src/main/java/org/bukkit/command/defaults/VersionCommand.java
 +++ b/src/main/java/org/bukkit/command/defaults/VersionCommand.java
-@@ -40,43 +40,47 @@ public class VersionCommand extends BukkitCommand {
+@@ -40,43 +40,49 @@ public class VersionCommand extends BukkitCommand {
  
      @Override
      public boolean execute(CommandSender sender, String currentAlias, String[] args) {
@@ -27,12 +27,12 @@ index bd3138c00..66ff1903e 100644
 -                    name.append(' ');
 -                }
 +            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cThis server is running &eFlamePaper &7(" + version + ") &cfor &71.8.8 &cby &bLinsaFTW&c."));
-+        }
-+        // FlamePaper end - Update Version Command
  
 -                name.append(arg);
 -            }
-+        if (!testPermission(sender)) return true;
++            return true;
++        }
++        // FlamePaper end - Update Version Command
  
 -            String pluginName = name.toString();
 -            Plugin exactPlugin = Bukkit.getPluginManager().getPlugin(pluginName);
@@ -40,8 +40,7 @@ index bd3138c00..66ff1903e 100644
 -                describeToSender(exactPlugin, sender);
 -                return true;
 -            }
-+        // FlamePaper start - Update Version Command
-+        StringBuilder name = new StringBuilder();
++        if (!testPermission(sender)) return true;
  
 -            boolean found = false;
 -            pluginName = pluginName.toLowerCase();
@@ -50,6 +49,9 @@ index bd3138c00..66ff1903e 100644
 -                    describeToSender(plugin, sender);
 -                    found = true;
 -                }
++        // FlamePaper start - Update Version Command
++        StringBuilder name = new StringBuilder();
++
 +        for (String arg : args) {
 +            if (name.length() > 0) {
 +                name.append(' ');
