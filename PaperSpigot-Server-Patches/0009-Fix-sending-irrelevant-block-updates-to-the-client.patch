@@ -1,4 +1,4 @@
-From 3305fb38c24bd8b8b75064ef8f9b71f92a2783b7 Mon Sep 17 00:00:00 2001
+From 6a23eea026b69610e109cded47af9f3f365cb09f Mon Sep 17 00:00:00 2001
 From: cswhite2000 <18whitechristop@gmail.com>
 Date: Tue, 7 Aug 2018 01:59:49 -0700
 Subject: [PATCH] Fix sending irrelevant block updates to the client

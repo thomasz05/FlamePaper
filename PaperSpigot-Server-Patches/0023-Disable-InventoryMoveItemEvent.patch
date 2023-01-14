@@ -1,4 +1,4 @@
-From 9bd9dea47c8ab92adb8fb6a5c7190f422b1547d1 Mon Sep 17 00:00:00 2001
+From 153a7347ea48e2f924caa81c8a94d26ef9030371 Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Sun, 12 Dec 2021 20:48:26 -0300
 Subject: [PATCH] Disable InventoryMoveItemEvent

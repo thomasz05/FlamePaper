@@ -1,4 +1,4 @@
-From 196b12abda6bd13b063f7768f29ffa955399077b Mon Sep 17 00:00:00 2001
+From 5d6dfde83214681ba47fd729319e50fbed035ff2 Mon Sep 17 00:00:00 2001
 From: Ralph Goers <rgoers@apache.org>
 Date: Thu, 9 Dec 2021 17:52:54 +0000
 Subject: [PATCH] Backport log4j 2.15.0 bugfix

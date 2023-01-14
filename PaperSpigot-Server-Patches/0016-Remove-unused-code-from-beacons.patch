@@ -1,4 +1,4 @@
-From fcc6cf6f38989435b35feb0278659c882ca5b0d8 Mon Sep 17 00:00:00 2001
+From 0a5d334246508337062759221d4220e94b55ab82 Mon Sep 17 00:00:00 2001
 From: heroslender <bruno.martins1998@hotmail.com>
 Date: Mon, 18 Jan 2021 17:39:52 +0000
 Subject: [PATCH] Remove unused code from beacons

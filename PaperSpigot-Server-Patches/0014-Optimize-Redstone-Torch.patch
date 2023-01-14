@@ -1,4 +1,4 @@
-From 28d36d9fbeb400f00dc4194a08ac46a168102eca Mon Sep 17 00:00:00 2001
+From f51ff8a29f690fb6f133ac4053593d5d57afff64 Mon Sep 17 00:00:00 2001
 From: unknown <LinsaFTW@users.noreply.github.com>
 Date: Tue, 8 Dec 2020 01:14:12 -0300
 Subject: [PATCH] Optimize Redstone Torch
