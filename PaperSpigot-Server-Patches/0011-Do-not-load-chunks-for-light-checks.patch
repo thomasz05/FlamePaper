@@ -1,4 +1,4 @@
-From d195865341d2714fdfaa855d58e24c6072f7d9a4 Mon Sep 17 00:00:00 2001
+From be81000fbd036402dd9dd21357dd86754ad172c8 Mon Sep 17 00:00:00 2001
 From: Aikar <aikar@aikar.co>
 Date: Thu, 31 Mar 2016 19:17:58 -0400
 Subject: [PATCH] Do not load chunks for light checks
@@ -7,10 +7,20 @@ Should only happen for blocks on the edge that uses neighbors light level
 (certain blocks). In that case, there will be 3-4 other neighbors to get a light level from.
 
 diff --git a/src/main/java/net/minecraft/server/World.java b/src/main/java/net/minecraft/server/World.java
-index ec322e521..144302458 100644
+index ec322e521..11a0c9109 100644
 --- a/src/main/java/net/minecraft/server/World.java
 +++ b/src/main/java/net/minecraft/server/World.java
-@@ -685,6 +685,7 @@ public abstract class World implements IBlockAccess {
+@@ -644,6 +644,9 @@ public abstract class World implements IBlockAccess {
+             if (blockposition.getY() >= 256) {
+                 blockposition = new BlockPosition(blockposition.getX(), 255, blockposition.getZ());
+             }
++            // FlamePaper start - Do not load chunks for light checks
++            if (!this.isLoaded(blockposition)) return 0;
++            // FlamePaper end - Do not load chunks for light checks
+ 
+             return this.getChunkAtWorldCoords(blockposition).a(blockposition, 0);
+         }
+@@ -685,6 +688,7 @@ public abstract class World implements IBlockAccess {
                  if (blockposition.getY() >= 256) {
                      blockposition = new BlockPosition(blockposition.getX(), 255, blockposition.getZ());
                  }

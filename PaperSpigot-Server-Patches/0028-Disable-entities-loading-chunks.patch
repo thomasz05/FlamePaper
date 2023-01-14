@@ -1,4 +1,4 @@
-From 20e561bd22bdefb6c91e9ec600f472beb0536533 Mon Sep 17 00:00:00 2001
+From 42afdfd2301d53e7913781c67f4b6886f1d00c5d Mon Sep 17 00:00:00 2001
 From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
 Date: Tue, 15 Mar 2022 10:57:28 -0300
 Subject: [PATCH] Disable entities loading chunks
@@ -125,10 +125,10 @@ index 872d9659c..567739da3 100644
  
      protected void b(NBTTagCompound nbttagcompound) {
 diff --git a/src/main/java/net/minecraft/server/World.java b/src/main/java/net/minecraft/server/World.java
-index 144302458..e334b9086 100644
+index 11a0c9109..ec2d1c417 100644
 --- a/src/main/java/net/minecraft/server/World.java
 +++ b/src/main/java/net/minecraft/server/World.java
-@@ -1176,14 +1176,8 @@ public abstract class World implements IBlockAccess {
+@@ -1179,14 +1179,8 @@ public abstract class World implements IBlockAccess {
                  Chunk chunk = this.getChunkIfLoaded( chunkx, chunkz );
                  if ( chunk == null )
                  {
@@ -145,7 +145,7 @@ index 144302458..e334b9086 100644
                  }
                  int cz = chunkz << 4;
                  // Compute ranges within chunk
-@@ -1680,7 +1674,6 @@ public abstract class World implements IBlockAccess {
+@@ -1683,7 +1677,6 @@ public abstract class World implements IBlockAccess {
              int i1 = MathHelper.floor(entity.locZ / 16.0D);
  
              if (!entity.ad || entity.ae != k || entity.af != l || entity.ag != i1) {
