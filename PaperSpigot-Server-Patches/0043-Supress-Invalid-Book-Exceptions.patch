@@ -1,0 +1,22 @@
+From d96d217b5fa2eb6c0368a81e9060693a56b89dc8 Mon Sep 17 00:00:00 2001
+From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
+Date: Wed, 25 Jan 2023 13:54:24 -0300
+Subject: [PATCH] Supress Invalid Book Exceptions
+
+
+diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
+index ea34b2564..a952ff106 100644
+--- a/src/main/java/net/minecraft/server/PlayerConnection.java
++++ b/src/main/java/net/minecraft/server/PlayerConnection.java
+@@ -2041,7 +2041,7 @@ public class PlayerConnection implements PacketListenerPlayIn, IUpdatePlayerList
+                     return;
+                 }
+             } catch (Exception exception1) {
+-                PlayerConnection.c.error("Couldn\'t sign book", exception1);
++                // FlamePaper - Supress Invalid Book Exceptions
+                 this.disconnect("Invalid book data!"); // CraftBukkit
+                 return;
+             } finally {
+-- 
+2.37.3.windows.1
+
