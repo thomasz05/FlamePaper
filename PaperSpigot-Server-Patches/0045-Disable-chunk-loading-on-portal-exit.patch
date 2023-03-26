@@ -1,0 +1,34 @@
+From 1df2aff149c9d4c0b02af73903eaacc5688ae5c7 Mon Sep 17 00:00:00 2001
+From: LinsaFTW <25271111+linsaftw@users.noreply.github.com>
+Date: Sun, 26 Mar 2023 17:39:12 -0300
+Subject: [PATCH] Disable chunk loading on portal exit
+
+
+diff --git a/src/main/java/net/minecraft/server/PortalTravelAgent.java b/src/main/java/net/minecraft/server/PortalTravelAgent.java
+index 72f3735b1..282832a60 100644
+--- a/src/main/java/net/minecraft/server/PortalTravelAgent.java
++++ b/src/main/java/net/minecraft/server/PortalTravelAgent.java
+@@ -133,10 +133,20 @@ public class PortalTravelAgent {
+         } else {
+             BlockPosition blockposition = new BlockPosition(x, y, z);
+ 
++            java.util.Collection<ChunkCoordIntPair> notGeneratedChunks = new java.util.HashSet<>(); // FlamePaper
++
+             for (int l = -searchRadius; l <= searchRadius; ++l) {   // Paper - actually use search radius
+                 BlockPosition blockposition1;
+ 
+                 for (int i1 = -searchRadius; i1 <= searchRadius; ++i1) {    // Paper - actually use search radius
++                    // FlamePaper start - Disable chunk loading on portal exit
++                    ChunkCoordIntPair chunkCoord = new ChunkCoordIntPair((blockposition.getX() + l) >> 4, (blockposition.getZ() + i1) >> 4);
++                    if (notGeneratedChunks.contains(chunkCoord)) continue;
++                    if (!this.a.getWorld().isChunkLoaded(chunkCoord.x, chunkCoord.z)) {
++                        notGeneratedChunks.add(chunkCoord);
++                        continue;
++                    }
++                    // FlamePaper end
+                     for (BlockPosition blockposition2 = blockposition.a(l, this.a.V() - 1 - blockposition.getY(), i1); blockposition2.getY() >= 0; blockposition2 = blockposition1) {
+                         blockposition1 = blockposition2.down();
+                         if (this.a.getType(blockposition2).getBlock() == Blocks.PORTAL) {
+-- 
+2.37.3.windows.1
+
